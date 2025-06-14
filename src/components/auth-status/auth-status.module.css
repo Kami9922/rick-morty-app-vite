@@ -1,0 +1,23 @@
+.unlogged {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-weight: bold;
+	position: absolute;
+	right: 10px;
+	padding: 10px;
+	margin-right: 5px;
+}
+
+.status {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-weight: bold;
+	position: absolute;
+	right: 10px;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	margin-right: 5px;
+}
