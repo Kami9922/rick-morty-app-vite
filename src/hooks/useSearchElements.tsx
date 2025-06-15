@@ -27,7 +27,7 @@ export const useSearchElements = (
 			params: { page: 1 },
 		})
 			.then((res) => {
-				const typedElements = res.data.results.map((item: any) => ({
+				const typedElements = res.data.results.map((item: ElementType) => ({
 					...item,
 					kind: category,
 				}))
@@ -54,7 +54,7 @@ export const useSearchElements = (
 			params: { page: pageNumber },
 		})
 			.then((res) => {
-				const typedElements = res.data.results.map((item: any) => ({
+				const typedElements = res.data.results.map((item: ElementType) => ({
 					...item,
 					kind: category,
 				}))

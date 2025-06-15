@@ -2,6 +2,7 @@ Created Rick Morty App with ts
 
 It has:
 
+- Mantine design system
 - Route system
 - Infinity Scroll
 - Lazy loadings

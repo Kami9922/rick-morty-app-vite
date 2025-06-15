@@ -1,6 +1,8 @@
 import { useAuth } from '../../context/auth-provider/auth-provider'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './auth-status.module.css'
+import { Button, Group, Text, Avatar, Menu } from '@mantine/core'
+import { IconLogout, IconUser } from '@tabler/icons-react'
 
 export const AuthStatus = () => {
 	const auth = useAuth()
@@ -15,17 +17,51 @@ export const AuthStatus = () => {
 	if (auth.user === null) {
 		return (
 			<Link
+				className={styles.unlogged}
 				to='/login'
 				replace>
-				<button className={styles.unlogged}>Sign in</button>
+				<Button>Sign in</Button>
 			</Link>
 		)
 	}
 
 	return (
-		<div className={styles.status}>
-			<span>{auth.user}</span>
-			<button onClick={handleSignout}>Sign out</button>
-		</div>
+		<Group
+			className={styles.status}
+			gap='sm'>
+			<Menu
+				shadow='md'
+				width={200}
+				position='bottom-end'>
+				<Menu.Target>
+					<Group
+						gap='xs'
+						style={{ cursor: 'pointer' }}>
+						<Avatar
+							color='blue'
+							radius='xl'
+							size='sm'>
+							<IconUser size={16} />
+						</Avatar>
+						<Text
+							fw={500}
+							size='sm'
+							truncate
+							style={{ maxWidth: '120px' }}>
+							{auth.user}
+						</Text>
+					</Group>
+				</Menu.Target>
+
+				<Menu.Dropdown>
+					<Menu.Item
+						leftSection={<IconLogout />}
+						onClick={handleSignout}
+						color='red'>
+						Sign out
+					</Menu.Item>
+				</Menu.Dropdown>
+			</Menu>
+		</Group>
 	)
 }

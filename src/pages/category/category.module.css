@@ -1,21 +1,11 @@
 .element {
-	font-size: 26px;
-	padding: 5px;
-	border: 3px solid black;
-	border-radius: 22px;
-	font-weight: 500;
-}
-
-.element:hover {
-	background-color: rgb(240, 240, 240);
-	border: 3px solid rgb(189, 189, 189);
-	transition: all 0.2s ease;
+	font-size: 24px;
 }
 
 .category {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	width: 355px;
+	width: 500px;
 	gap: 15px;
 }

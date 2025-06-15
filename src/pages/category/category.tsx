@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import styles from './category.module.css'
-
 import { useCallback, useRef } from 'react'
 import { useSearchElements } from '../../hooks/useSearchElements'
+import { Button, Loader, Center } from '@mantine/core' // Импортируем Loader и Center
 
 export const Category = ({
 	category,
@@ -41,23 +41,35 @@ export const Category = ({
 		[isLoading, hasMore, setPageNumber]
 	)
 
-	if (isLoading && pageNumber === 1) return <div>Loading...</div>
+	if (isLoading && pageNumber === 1)
+		return (
+			<Center py='sm'>
+				<Loader size='sm' />
+			</Center>
+		)
+
 	if (error) return <div>Error loading data</div>
 
 	return (
 		<>
 			<h1>{category.charAt(0).toUpperCase() + category.slice(1) + 's'}</h1>
+
 			<ul className={styles.category}>
 				{elements.map((item, index) => (
 					<Link
 						ref={index === elements.length - 1 ? lastNodeRef : null}
 						to={`/${category}/${item.id}`}
-						key={item.id}>
-						<li className={styles.element}>{item.name}</li>
+						key={item.id}
+						className={styles.link}>
+						<Button
+							fullWidth
+							variant='outline'
+							mb='sm'>
+							<li className={styles.element}>{item.name}</li>
+						</Button>
 					</Link>
 				))}
 			</ul>
-			{isLoading && <div>Loading more...</div>}
 		</>
 	)
 }

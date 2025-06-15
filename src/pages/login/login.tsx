@@ -4,6 +4,7 @@ import * as yup from 'yup'
 import { useAuth } from '../../context/auth-provider/auth-provider'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styles from './login.module.css'
+import { Button, Input } from '@mantine/core'
 
 const signupSchema = yup.object({
 	login: yup
@@ -44,17 +45,28 @@ export const Login = () => {
 			<h1>Login</h1>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				{errors.login && <p className={styles.error}>{errors.login.message}</p>}
-				<input
+				<Input
+					size='sm'
+					radius='md'
+					{...register('login')}
+					placeholder='Введите логин'
+					error={errors.login?.message}
+				/>
+				{/* <input
 					type='text'
 					{...register('login')}
 					placeholder='Введите логин'
-				/>
+				/> */}
 
-				<button type='submit'>Sign in</button>
+				<Button
+					className={styles.button}
+					type='submit'>
+					Sign in
+				</Button>
 			</form>
-			<button className={styles.button}>
-				<Link to='/'>Back to main</Link>
-			</button>
+			<Link to='/'>
+				<Button className={styles.button}>Back to main</Button>
+			</Link>
 		</div>
 	)
 }

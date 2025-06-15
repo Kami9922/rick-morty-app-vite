@@ -5,3 +5,8 @@
 .button {
 	margin-top: 15px;
 }
+
+form {
+	width: 400px;
+	margin: 0 auto;
+}
