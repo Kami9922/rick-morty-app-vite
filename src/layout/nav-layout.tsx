@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { AuthStatus } from '../components'
-import { Header } from '../ui/header/header'
+import { Header } from '../components'
 import { Outlet } from 'react-router-dom'
 import { Center, Loader } from '@mantine/core'
 

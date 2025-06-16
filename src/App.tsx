@@ -1,10 +1,10 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import { PrivateRoute } from './components'
+import { ErrorBoundary, PrivateRoute } from './components'
 import { NavLayout } from './layout/nav-layout'
 import { AuthProvider } from './context/auth-provider/auth-provider'
 import { lazy, useState } from 'react'
-import { ErrorBoundary } from './components/error-boundary/error-boundary'
+
 import { MantineProvider } from '@mantine/core'
 
 const Category = lazy(() =>
