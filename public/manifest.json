@@ -1,0 +1,50 @@
+{
+	"name": "Rick Morty App",
+	"short_name": "RickMortyApp",
+	"start_url": "/index.html",
+	"display": "standalone",
+	"description": "A description for your application",
+	"lang": "eng",
+	"dir": "auto",
+	"theme_color": "#000000",
+	"background_color": "#000000",
+	"orientation": "any",
+	"icons": [
+		{
+			"src": "/src/assets/icons/48x48.png",
+			"sizes": "48x48",
+			"type": "image/png"
+		},
+		{
+			"src": "/src/assets/icons/72x72.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "/src/assets/icons/96x96.png",
+			"sizes": "96x96",
+			"type": "image/png"
+		},
+		{
+			"src": "/src/assets/icons/142x142.png",
+			"sizes": "142x142",
+			"type": "image/png"
+		},
+		{
+			"src": "/src/assets/icons/192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/src/assets/icons/256x256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/src/assets/icons/512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}

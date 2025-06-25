@@ -1,25 +1,20 @@
 {
 	"compilerOptions": {
-		"target": "ES6", // Современный JavaScript (поддержка async/await и др.)
-		"module": "ESNext", // Использует ES-модули (лучше для Tree Shaking)
-		"lib": ["DOM", "es2018"], // Добавляет типы для браузерного API и ES6+
-		"jsx": "react-jsx", // Для поддержки JSX (в React 17+)
-		"strict": true, // Включает все strict-проверки (рекомендуется)
-		"moduleResolution": "node", // Как искать модули (как в Node.js)
-		"resolveJsonModule": true,
-		"esModuleInterop": true, // Улучшает совместимость с CommonJS
-		"skipLibCheck": true, // Ускоряет компиляцию (пропускает проверку типов в node_modules)
-		"forceConsistentCasingInFileNames": true, // Запрещает разный регистр в путях
-		"baseUrl": "./src", // Базовый путь для абсолютных импортов
-		"allowSyntheticDefaultImports": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"strict": true,
+		"jsx": "react-jsx",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
+		"types": ["vite/client"],
+		"baseUrl": ".",
 		"paths": {
-			// Алиасы для импортов (опционально)
-			"@/*": ["./*"]
-		},
-		"allowJs": true, // Разрешает .js файлы (если мигрируете с JS)
-		"outDir": "./dist", // Куда складывать скомпилированные файлы (если нужно)
-		"noEmit": true //б Не создает .js файлы (если используете Babel/Vite)
+			"@/*": ["src/*"]
+		}
 	},
-	"include": ["src/**/*"], // Какие файлы компилировать
-	"exclude": ["node_modules"] // Что игнорировать
+	"include": ["src", "vite.config.ts"],
+	"exclude": ["node_modules"]
 }
