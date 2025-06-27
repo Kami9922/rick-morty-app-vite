@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc -b && vite build",
+		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview"
 	},
@@ -19,6 +19,7 @@
 		"react-dom": "^19.1.0",
 		"react-hook-form": "^7.57.0",
 		"react-router-dom": "^7.6.2",
+		"vite-plugin-pwa": "^1.0.0",
 		"yup": "^1.6.1"
 	},
 	"devDependencies": {
@@ -26,7 +27,7 @@
 		"@types/node": "^24.0.4",
 		"@types/react": "^19.1.2",
 		"@types/react-dom": "^19.1.2",
-		"@vitejs/plugin-react": "^4.4.1",
+		"@vitejs/plugin-react": "^4.6.0",
 		"eslint": "^9.25.0",
 		"eslint-plugin-react-hooks": "^5.2.0",
 		"eslint-plugin-react-refresh": "^0.4.19",

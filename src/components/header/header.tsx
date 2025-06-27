@@ -1,4 +1,4 @@
-import { Button, Title, Text, Group, Stack } from '@mantine/core'
+import { Button, Text, Group, Stack } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import { IconUser, IconMovie, IconMapPin } from '@tabler/icons-react'
 
@@ -7,12 +7,7 @@ export const Header = () => {
 		<Stack
 			gap='sm'
 			p='md'>
-			<Title
-				order={1}
-				ta='center'
-				c='blue'>
-				Hello to all fans of Rick and Morty!
-			</Title>
+			<h1>Hello to all fans of Rick and Morty!</h1>
 
 			<Text
 				fw={500}

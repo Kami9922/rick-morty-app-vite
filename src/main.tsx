@@ -4,11 +4,13 @@ import { App } from './App'
 import { BrowserRouter } from 'react-router-dom'
 import '@mantine/core/styles.css'
 
-if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-	navigator.serviceWorker
-		.register('/service-worker.js')
-		.then(() => console.log('Service Worker Registered'))
-		.catch(() => console.log('Service Worker Failed to Register'))
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		navigator.serviceWorker
+			.register('/service-worker.js')
+			.then((reg) => console.log('SW registered:', reg))
+			.catch((err) => console.log('SW registration failed:', err))
+	})
 }
 
 const rootElement = document.getElementById('root')
